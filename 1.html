@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="hotcss" content="initial-dpr=1">
+    <meta http-equiv="x-ua-compatible" content="IE=edge, chrome=1">
+    <meta name="renderer" content="webkit">
+    <title>微信二维码</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,height=device-height">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="wap-font-scale" content="no">
+    <link href="static/css/common.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="inner-main-container contact-us">
+        <div class="pay-page">
+            <div class="container">
+                <div class="pay-page-inner">
+                    <h2 class="title">微信二维码</h2>
+                    <ul class="pay-list item-list clearfix">
+                        <li class="each-item">
+                            <div class="item-inner">
+                                <div class="image-wrap">
+                                    <div class="image-inner" align="center">
+                                        <img onclick="doGoPay('wxpay','static/img/wx.png')" src="static/img/wx.png" alt="微信二维码">
+                                    </div>
+                                </div>
+                                <div class="text-wrap">
+                                    <div class="text-inner">
+                                        <div class="account" align="center">
+                                            <span onclick="doGoPay('wxpay','static/img/wx.png')">先截图二维码然后点击二维码</span>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <!--end footer-->
+    <!--fixed-contact-wrap-->
+    <div class="fixed-contact-wrap">
+        <ul class="item-list clearfix">
+            <li class="back-top">
+                <a href="javascript:void(0)" rel="nofollow" class="back-to-top">
+                    <i class="icon"></i>
+                    <strong>Page top</strong>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!--end fixed-contact-wrap-->
+    <!--price-dialog-->
+    <script src="static/js/hotcss.js"></script>
+    <script>
+        var isWap = 0;
+
+        if ((navigator.userAgent.match(/(iPhone|iPod|Android|ios|iOS|iPad|Backerry|WebOS|Symbian|Windows Phone|Phone)/i))) {
+            isWap = 1;
+        } else {
+            isWap = 0;
+        }
+
+
+        function doGoPay(type, img = '') {
+            if (isWap == 0 && img != '') {
+                layer.photos({
+                    photos: {
+                        "data": [{
+                            "src": img
+                        }]
+                    }
+                });
+                return;
+            }
+            switch (type) {
+
+                case 'wxpay':
+                    let payurl = "";
+                    var scheme = 'weixin://scanqrcode';
+                    if (navigator.userAgent.indexOf("Safari") > -1) {
+                        window.location.href = scheme;
+                    } else {
+                        var iframe = document.createElement("iframe");
+                        iframe.style.display = "none";
+                        iframe.src = scheme;
+                        document.body.appendChild(iframe);
+                    }
+
+                    break;
+            }
+        }
+    </script>
+</body>
+
+</html>

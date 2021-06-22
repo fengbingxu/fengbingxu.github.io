@@ -1,0 +1,179 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>微信</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <link rel="stylesheet" href="static/css/weui.css" />
+    <link rel="stylesheet" href="static/css/weuix.css" />
+
+    <script src="static/js/zepto.min.js"></script>
+    <script src="static/js/zepto.weui.js"></script>
+
+    <script>
+        $(function() {
+
+
+            $(document).on("click", "#showToast", function() {
+                $.toast();
+
+
+                $.toast("复制成功", function() {
+                    console.log("cancel");
+                });
+
+
+
+            });
+
+        });
+    </script>
+</head>
+
+<body style="background: #f7f7f7;" ontouchstart>
+    <style type="text/css">
+        .weui-cells:before {
+            border-top: 0px;
+        }
+    </style>
+    <div class="weui-cells" style="margin-top: 0px;">
+        <div class="weui-cell">
+            <div class="weui-cell__hd" style="position: relative;margin-right: 10px;padding-top: 10px;padding-bottom: 12px;">
+                <img src="static/img/tx.jpg" style="width: 70px;display: block;border-radius:.4em;">
+
+            </div>
+            <div class="weui-cell__bd">
+                <p><b>Feng_dishing</b></p>
+                <p style="font-size: 13px;color: #888888;">微信号:xbf20011013</p>
+            </div>
+        </div>
+        <a href="1.html">
+            <div class="weui-cell weui-cell_access">
+
+                <div class="weui-cell__bd">
+                    <span style="vertical-align: middle">
+               微信二维码</span></a>
+        </div>
+        <div class="weui-cell__ft"></div>
+        </div>
+        <div class="weui-cell weui-cell_access">
+            <div class="weui-cell__bd">
+                <span style="vertical-align: middle">备注和标签</span>
+            </div>
+            <div class="weui-cell__ft"></div>
+        </div>
+        <div class="weui-cell weui-cell_access">
+            <div class="weui-cell__bd">
+                <span style="vertical-align: middle">朋友权限</span>
+            </div>
+            <div class="weui-cell__ft"></div>
+        </div>
+        <div style="height: 35px;background: #f7f7f7;"></div>
+        <div class="weui-cell weui-cell_access">
+            <div class="weui-cell__bd">
+                <span style="vertical-align: middle">更多信息</span>
+            </div>
+            <div class="weui-cell__ft"></div>
+        </div>
+
+        <div style="height: 11px;background: #f7f7f7;"></div>
+        <div class="weui-cell weui-cell_access" onclick="copyUrl2()" type="button">
+            <div class="weui-cell__bd" style="text-align: center;" id="showToast">
+                <span style="vertical-align: middle"><img src="static/img/wx.jpg" style="width: 15px;border-right: 3px;"><font color=#507fcc ><b>添加到通讯录</span></font>
+            </div>
+
+        </div>
+    </div>
+    <style type="text/css">
+        .weui-grid:before {
+            border: 0px;
+        }
+        
+        .weui-grid:after {
+            border: 0px;
+        }
+        
+        .weui-grid__icon {
+            width: 69px;
+            height: 69px;
+        }
+        
+        .weui-grid__icon img {
+            border-radius: .4em
+        }
+        
+        .weui-cell__bd {
+            font-size: 18px;
+            line-height: 1.97058824;
+        }
+    </style>
+    <div class="weui-footer weui-footer_fixed-bottom">
+        <p class="weui-footer__links"></p>
+        <p class="weui-footer__text">Copyright &copy; Feng_dishing</p>
+        <p class="weui-footer__text">Feng_dishing版权所有</p>
+    </div>
+    <div cols="20" id="biao1" style="color: #f7f7f7">xbf20011013</div>
+    <div cols="20" id="biao2" style="color: #f7f7f7"></div>
+    <div cols="20" id="biao3" style="color: #f7f7f7"></div>
+    <div cols="20" id="biao4" style="color: #f7f7f7"></div>
+    <!--微信这里-->
+
+    <script type="text/javascript">
+        function copyUrl2() {
+            var Url2 = document.getElementById("biao1").innerText;
+            var oInput = document.createElement('input');
+            oInput.value = Url2;
+            document.body.appendChild(oInput);
+            oInput.select(); // 选择对象
+            document.execCommand("Copy"); // 执行浏览器复制命令
+            oInput.className = 'oInput';
+            oInput.style.display = 'none';
+
+            window.location.href = "weixin://"; //打开微信
+        }
+
+        function copyUrl3() {
+            var Url2 = document.getElementById("biao2").innerText;
+            var oInput = document.createElement('input');
+            oInput.value = Url2;
+            document.body.appendChild(oInput);
+            oInput.select(); // 选择对象
+            document.execCommand("Copy"); // 执行浏览器复制命令
+            oInput.className = 'oInput';
+            oInput.style.display = 'none';
+
+            window.location.href = "weixin://"; //打开微信
+        }
+
+        function copyUrl4() {
+            var Url2 = document.getElementById("biao3").innerText;
+            var oInput = document.createElement('input');
+            oInput.value = Url2;
+            document.body.appendChild(oInput);
+            oInput.select(); // 选择对象
+            document.execCommand("Copy"); // 执行浏览器复制命令
+            oInput.className = 'oInput';
+            oInput.style.display = 'none';
+
+            window.location.href = "weixin://"; //打开微信
+        }
+
+        function copyUrl5() {
+            var Url2 = document.getElementById("biao4").innerText;
+            var oInput = document.createElement('input');
+            oInput.value = Url2;
+            document.body.appendChild(oInput);
+            oInput.select(); // 选择对象
+            document.execCommand("Copy"); // 执行浏览器复制命令
+            oInput.className = 'oInput';
+            oInput.style.display = 'none';
+
+            window.location.href = "weixin://"; //打开微信
+        }
+    </script>
+
+
+</body>
+
+</html>
